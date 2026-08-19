@@ -10,7 +10,83 @@
 </head>
 
 <body>
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <span class="eyebrow">PRODUCTIVITY</span>
+        <h1>
+          Task<span>Flow</span>
+        </h1>
+        <p>
+          Få saker gjorda. En uppgift i taget.
+        </p>
+      </div>
+      <div class="header-icon" aria-hidden="true">
+        ✓
+      </div>
+    </header>
 
+    <section class="todo-card" aria-label="To-Do applikation">
+      <!-- Add task -->
+      <form id="todo-form" class="todo-form">
+        <label for="todo-input" class="sr-only">
+          Ny uppgift
+        </label>
+        <input id="todo-input" name="todo" type="text" placeholder="Vad behöver du göra?" autocomplete="off"
+          maxlength="120" required>
+        <button type="submit" class="add-button">
+          <span>+</span>
+          Lägg till
+        </button>
+      </form>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filtrera uppgifter">
+          <button type="button" class="filter-button active" data-filter="all">
+            Alla
+          </button>
+          <button type="button" class="filter-button" data-filter="active">
+            Aktiva
+          </button>
+          <button type="button" class="filter-button" data-filter="completed">
+            Klara
+          </button>
+        </div>
+        <div id="task-counter" class="task-counter" aria-live="polite">
+          0 aktiva
+        </div>
+      </div>
+
+      <!-- Todo list -->
+      <ul id="todo-list" class="todo-list" aria-live="polite" aria-label="Uppgifter"></ul>
+
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-icon">
+          ✨
+        </div>
+        <h2>Inga uppgifter</h2>
+        <p>
+          Lägg till något du vill få gjort.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <footer class="todo-footer">
+        <span>
+          <span class="status-dot"></span>
+          Sparas automatiskt
+        </span>
+        <button id="clear-completed" type="button" class="clear-button">
+          Rensa klara
+        </button>
+      </footer>
+    </section>
+    <p class="copyright">
+      TaskFlow · Built with JavaScript
+    </p>
+  </main>
 
   <script type="module" src="script.js"></script>
 </body>
